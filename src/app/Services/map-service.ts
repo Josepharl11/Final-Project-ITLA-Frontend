@@ -7,7 +7,7 @@ import { Building } from '../models/aula.model';
   providedIn: 'root',
 })
 export class MapService {
-  private apiUrl = 'http://localhost:3000/api/buildings';
+  private apiUrl = 'https://final-project-itla-backend-production.up.railway.app/api/buildings';
   
   constructor(private http: HttpClient) { }
 
