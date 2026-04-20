@@ -1,0 +1,104 @@
+<header class="home-header">
+    <div class="header-section">
+        <div class="logo-title">
+            <div class="logo-badge">
+                <h4>IT</h4>
+            </div>
+            <div class="brand-copy">
+                <h4>ITLA</h4>
+                <h5>CAMPUS DIGITAL</h5>
+            </div>
+        </div>
+
+        <nav class="sections">
+            <a href="#features">Características</a>
+            <a href="#about">Acerca</a>
+        </nav>
+
+        <div class="social-links">
+            <p>Redes Sociales</p>
+            <a href="https://www.instagram.com/josepharl11/" title="instagram icons" class="social-icon">
+                <img src="/instagram.png" alt="Instagram Icon">
+            </a>
+            <a href="https://web.facebook.com/Josepharld" title="facebook icons" class="social-icon">
+                <img src="/facebook.png" alt="Facebook Icon">
+            </a>
+            <a href="https://www.linkedin.com/in/josepharl-reyes-2a6807306/" title="linkedin icons" class="social-icon">
+                <img src="/linkedin.png" alt="LinkedIn Icon">
+            </a>
+        </div>
+
+        <button class="map-btn" routerLink="/map">Abrir mapa ➤</button>
+    </div>
+</header>
+<div class="items">
+    <div class="content">
+        <h1>Explora el campus del ITLA de forma interactiva</h1>
+        <p>Localiza aulas, laboratorios, la cafetería, la biblioteca y los demás espacios del Instituto Tecnológico de Las Américas en un mapa dinámico hecho con SVG.</p>
+        <div class="buttons">
+            <button class="int-map-btn" routerLink="/map">Entrar al mapa interactivo ➤</button>
+            <button type="button">Conocer más</button>
+        </div>
+
+        <div class="extra-info">
+            <div>
+                <h4>4</h4>
+                <p>Edificios</p>
+            </div>
+            <div>
+                <h4>+30</h4>
+                <p>Espacios</p>
+            </div>
+            <div>
+                <h4>3</h4>
+                <p>Anexos</p>
+            </div>
+        </div>
+    </div>
+    <div class="content-2">
+        <img src="https://resources.diariolibre.com/images/documents/10157/0/image_content_8651468_20170814175532-focus-0-0-896-504.jpg" alt="Campus ITLA">
+    </div>
+</div>
+
+<div id="features" class="charact-container">
+    <div class="charact-items">
+        <p>CARACTERÍSTICAS</p>
+
+        <h2>Todo lo que necesitas para moverte por el campus</h2>
+
+        <div class="cards">
+            <app-map-card
+              icon="🏢"
+              title="Edificios y pisos"
+              description="Consulta cada edificio del campus, sus pisos y los espacios disponibles en cada nivel.">
+            </app-map-card>
+
+            <app-map-card
+              icon="🎓"
+              title="Aulas y laboratorios"
+              description="Encuentra rápidamente aulas, laboratorios, biblioteca y cafetería.">
+            </app-map-card>
+
+            <app-map-card
+              icon="🔍"
+              title="Búsqueda y filtros"
+              description="Filtra por categoría o busca un aula específica para ubicarla al instante en el mapa.">
+            </app-map-card>
+        </div>
+    </div>
+</div>
+
+<div id="about" class="about-container">
+    <div class="about-box">
+        <h2>Listo para recorrer el ITLA?</h2>
+        <p>Abre el mapa interactivo y descubre cada espacio del campus en segundos.</p>
+        <button class="get-map-btn">Entrar al mapa ➤</button>
+    </div>
+</div>
+
+<footer id="footer">
+    <div class="footer-content">
+        <p>&copy; 2026 ITLA - Mapa Interactivo. Todos los derechos reservados.</p>
+        <p>Desarrollado por el equipo de ITLA Maps - (Joseph - Selinex)</p>
+    </div>
+</footer>

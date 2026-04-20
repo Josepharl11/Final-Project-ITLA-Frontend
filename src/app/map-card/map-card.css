@@ -1,0 +1,36 @@
+.map-card {
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 28px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-height: 240px;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
+}
+
+.card-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  background: rgba(248, 43, 37, 0.12);
+  color: #d9464e;
+  font-size: 1.35rem;
+}
+
+.card-copy h3 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 1.2rem;
+  line-height: 1.25;
+}
+
+.card-copy p {
+  margin: 0;
+  color: #475569;
+  line-height: 1.8;
+  font-size: 0.95rem;
+}

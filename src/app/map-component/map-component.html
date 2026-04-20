@@ -1,0 +1,174 @@
+<header style="background-color: #004274; color: white; padding: 1rem; text-align: center;">
+  <h1>ITLA - Mapa Interactivo (Prototipo)</h1>
+</header>
+
+<div class="map-container">
+    <div class="map-section">
+        <h2>Mapa Interactivo ITLA</h2>
+        <p class="instruccion">Pasa el cursor o haz clic sobre cualquier edificio para ver sus aulas, laboratorios u oficinas.</p>
+        
+        <svg
+            viewBox="0 0 900 620"
+            (click)="selectedArea($event)"
+            class="svg-map">
+
+            <defs>
+                <linearGradient id="bgGradient" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#d7eefc" />
+                    <stop offset="100%" stop-color="#f0fbff" />
+                </linearGradient>
+                <linearGradient id="buildingLight" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#ffffff" stop-opacity="0.18" />
+                    <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+                </linearGradient>
+                <linearGradient id="parkingGradient" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#4f5d73" />
+                    <stop offset="100%" stop-color="#334155" />
+                </linearGradient>
+                <radialGradient id="treeGradient" cx="40%" cy="40%" r="60%">
+                    <stop offset="0%" stop-color="#4ade80" />
+                    <stop offset="100%" stop-color="#166534" />
+                </radialGradient>
+                <filter id="shadow">
+                    <feDropShadow dx="0" dy="12" stdDeviation="8" flood-color="#000000" flood-opacity="0.15" />
+                </filter>
+            </defs>
+            <g class="roads">
+                <rect x="0" y="0" width="900" height="620" fill="url(#bgGradient)" rx="30" />
+
+                <rect x="0" y="220" width="900" height="52" class="road" />
+                <rect x="344" y="0" width="52" height="620" class="road" />
+
+                <rect x="0" y="430" width="900" height="52" class="road" />
+            </g>
+
+            <g class="road-network">
+                <rect x="0" y="220" width="900" height="52" class="road-asphalt" />
+                <line x1="0" y1="246" x2="900" y2="246" class="road-line" />
+
+                <rect x="344" y="0" width="52" height="620" class="road-asphalt" />
+                <line x1="370" y1="0" x2="370" y2="620" class="road-line" />
+
+                <rect x="0" y="430" width="900" height="52" class="road-asphalt" />
+                <line x1="0" y1="456" x2="900" y2="456" class="road-line" />
+            
+                <rect x="344" y="220" width="52" height="52" class="road-asphalt" />
+            </g>
+
+            <rect x="0" y="220" width="900" height="4" fill="#f1e3c8" />
+            <rect x="344" y="0" width="4" height="620" fill="#f1e3c8" />
+
+            <g class="tree-group">
+                <circle cx="75" cy="70" r="16" class="tree" />
+                <circle cx="825" cy="70" r="16" class="tree" />
+                <circle cx="75" cy="545" r="16" class="tree" />
+                <circle cx="825" cy="545" r="16" class="tree" />
+                <circle cx="440" cy="540" r="16" class="tree" />
+            </g>
+
+            <g id="entrada" class="building-group">
+                <rect x="360" y="16" width="180" height="40" rx="12" class="entrance-plate" />
+                <text x="450" y="41" class="entrance-label">ENTRADA</text>
+            </g>
+
+            <g id="parking" class="building-group">
+                <rect x="20" y="100" width="140" height="420" class="parking-rect" />
+                <text x="90" y="300" class="parking-label">P</text>
+                <text x="90" y="320" class="parking-text">PARQUEO</text>
+
+                <rect x="465" y="500" width="280" height="100" rx="18" class="parking-rect" />
+                <text x="605" y="550" class="parking-label">P</text>
+                <text x="605" y="570" class="parking-text">PARQUEO</text>
+            </g>
+
+            <g id="building_3" class="building-group">
+                <rect x="170" y="70" width="140" height="140" rx="18" class="building-rect b3" />
+                <rect x="170" y="70" width="140" height="140" rx="18" fill="url(#buildingLight)" />
+                <text x="240" y="150" class="building-label">3</text>
+            </g>
+
+            <g id="building_4" class="building-group">
+                <rect x="410" y="70" width="140" height="140" rx="18" class="building-rect b4" />
+                <rect x="410" y="70" width="140" height="140" rx="18" fill="url(#buildingLight)" />
+                <text x="480" y="150" class="building-label">4</text>
+            </g>
+
+            <g id="building_2" class="building-group">
+                <rect x="170" y="280" width="140" height="140" rx="18" class="building-rect b1" />
+                <rect x="170" y="280" width="140" height="140" rx="18" fill="url(#buildingLight)" />
+                <text x="240" y="360" class="building-label">2</text>
+            </g>
+
+            <g id="building_1" class="building-group">
+                <rect x="410" y="280" width="140" height="140" rx="18" class="building-rect b2" />
+                <rect x="410" y="280" width="140" height="140" rx="18" fill="url(#buildingLight)" />
+                <text x="480" y="360" class="building-label">1</text>
+            </g>
+
+            <g id="residencia" class="building-group">
+                <rect x="600" y="90" width="200" height="120" rx="18" class="residence-rect" />
+                <text x="700" y="145" class="extra-label">RA</text>
+                <text x="700" y="180" class="extra-subtitle">Residencia Académica</text>
+            </g>
+
+            <g id="cancha" class="building-group">
+                <rect x="570" y="280" width="70" height="140" rx="18" class="residence-rect" />
+                <rect x="570" y="280" width="70" height="140" rx="18" fill="url(#buildingLight)" />
+                <text x="605" y="345" class="extra-label">CA</text>
+                <text x="605" y="375" class="extra-subtitle">Cancha</text>
+            </g>
+
+            <g id="politecnico" class="building-group">
+                <rect x="680" y="280" width="200" height="120" rx="18" class="pol-rect" />
+                <text x="780" y="330" class="extra-label">POL</text>
+                <text x="780" y="365" class="extra-subtitle">Politécnico ITLA</text>
+            </g>
+
+            <g id="north" class="building-group">
+                <circle cx="800" cy="520" r="40" class="compass-bg" />
+                <polygon points="800,495 790,545 810,545" class="compass-needle" />
+                <text x="800" y="515" class="compass-label">N</text>
+            </g>
+        </svg>
+    </div>
+
+    @if (buildingSelected) {
+        <div class="detail-panel">
+            <div class="panel-header">
+                <div class="badge-numero">
+                    <div class="title-group">
+                        <span class="tag-tipo">Aulas</span>
+                        <h3>{{ buildingSelected.name }}</h3>
+                        <button class="close-btn" (click)="closeInfo()">×</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel-body">
+                <h4>DESCRIPCIÓN</h4>
+                <p>{{ buildingSelected.description }} </p>
+
+                <h4>PISOS Y ESPACIOS</h4>
+                <div class="floors-list">
+                    @for (floor of buildingSelected.floors; track floor.level) {
+                        <div class="floor-card">
+                            <div class="floor-info">
+                                <strong>Piso {{ floor.level }} </strong>
+                                <span>{{ floor.descriptionLevel }} </span>
+                            </div>
+                            <div class="tags-container">
+                                @if (floor.spaces && floor.spaces.length > 0) {
+                                    @for (space of floor.spaces; track space.name) {
+                                    <span class="tag-space" [title]="space.type">{{ space.name }} </span>
+                                    }
+                                } @else {
+                                    <span class="no-data">No hay espacios registrados</span>
+                                }
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+</div>
