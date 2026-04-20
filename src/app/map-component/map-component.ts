@@ -42,4 +42,8 @@ export class MapComponent implements OnInit{
   closeInfo() {
     this.buildingSelected = null;
   }
+
+  goToHome() {
+    window.location.href = '/';
+  }
 }
