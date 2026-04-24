@@ -8,7 +8,6 @@ import { Building } from '../models/aula.model';
 })
 export class MapService {
   private apiUrl = 'https://final-project-itla-backend-production.up.railway.app/api/buildings';
-  // private apiUrl = 'http://localhost:3000/api/buildings';
   
   constructor(private http: HttpClient) { }
 
