@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, ViewChild, ElementRef } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { MapCard } from '../map-card/map-card';
 

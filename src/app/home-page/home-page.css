@@ -32,9 +32,39 @@ footer {
 
 .home-header {
   padding: 1.5rem 1rem;
-  background: rgba(248, 250, 253, 0.08);
+  background: rgba(8, 28, 60, 0.95);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.home-header.header-light {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.home-header.header-light .sections a {
+  color: #0f172a;
+  opacity: 0.75;
+}
+
+.home-header.header-light .sections a:hover {
+  color: #0f172a;
+  opacity: 1;
+}
+
+.home-header.header-light .social-links p {
+  color: #0f172a;
+}
+
+.home-header.header-light .social-links a {
+  color: #0f172a;
+}
+
+.home-header.header-light .social-links a:hover {
+  color: #0f172a;
 }
 
 .header-section {
